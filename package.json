@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.2.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1"
   },
   "scripts": {
@@ -51,5 +52,5 @@
   "bugs": {
     "url": "https://github.com/2mill/banfeed/issues"
   },
-  "homepage": "https://github.com/2mill/banfeed#readme"
+  "homepage": ""
 }
