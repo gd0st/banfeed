@@ -1,4 +1,5 @@
 import Button from './Button';
+import { MdSave } from 'react-icons/md';
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 
@@ -8,13 +9,11 @@ export default {
 };
 
 export const Text = () => (
-	<Button onClick={action('clicked')}>Hello Button</Button>
+	<Button onClick={action('clicked')}>button text</Button>
 );
 
-export const Emoji = () => (
-	<Button onClick={action('clicked')}>
-		<span role='img' aria-label='so cool'>
-			😀 😎 👍 💯
-		</span>
+export const WithIcon = () => (
+	<Button onClick={action('clicked')} icon={<MdSave />}>
+		button text
 	</Button>
 );
