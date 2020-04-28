@@ -1,6 +1,7 @@
-import { FaGamepad, GoBeaker, MdSave } from 'react-icons/all';
-
+import { FaGamepad } from 'react-icons/fa';
+import { GoBeaker } from 'react-icons/go';
 import IconButton from './IconButton';
+import { MdSave } from 'react-icons/md';
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 

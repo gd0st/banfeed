@@ -1,3 +1,5 @@
+import { boolean, text } from '@storybook/addon-knobs';
+
 import Button from './Button';
 import { MdSave } from 'react-icons/md';
 import React from 'react';
@@ -9,11 +11,17 @@ export default {
 };
 
 export const Text = () => (
-	<Button onClick={action('clicked')}>button text</Button>
+	<Button disabled={boolean('Disabled', false)} onClick={action('clicked')}>
+		{text('Button Text', 'hello world')}
+	</Button>
 );
 
 export const WithIcon = () => (
-	<Button onClick={action('clicked')} icon={<MdSave />}>
-		button text
+	<Button
+		disabled={boolean('Disabled', false)}
+		onClick={action('clicked')}
+		icon={<MdSave />}
+	>
+		{text('Button Text', 'save button')}
 	</Button>
 );

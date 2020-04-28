@@ -6,12 +6,16 @@ const useStyles = makeStyles({
 });
 
 const ButtonBase = (props) => {
-	const { children, onClick } = props;
-
+	const { children, onClick, disabled } = props;
 	const classes = useStyles({});
 
 	return (
-		<button className={classes.root} href='#' onClick={onClick}>
+		<button
+			className={classes.root}
+			href='#'
+			onClick={onClick}
+			disabled={disabled}
+		>
 			{children}
 		</button>
 	);
