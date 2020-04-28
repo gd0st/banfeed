@@ -1,3 +1,6 @@
+/* https://cssreset.com/what-is-a-css-reset/ */
+@import-normalize;
+
 body {
 	margin: 0;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',

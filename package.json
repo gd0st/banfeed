@@ -6,6 +6,7 @@
 		"node": "^10.15.3"
 	},
 	"dependencies": {
+		"@material-ui/styles": "^4.9.10",
 		"@testing-library/jest-dom": "^4.2.4",
 		"@testing-library/react": "^9.5.0",
 		"@testing-library/user-event": "^7.2.1",
@@ -73,12 +74,10 @@
 	},
 	"lint-staged": {
 		"*.+(js|jsx)": [
-			"eslint --fix",
-			"git add"
+			"eslint --fix"
 		],
-		"*.+(json|css|md)": [
-			"prettier --write",
-			"git add"
+		"*.+(json|scss|css|md)": [
+			"prettier --write"
 		]
 	},
 	"husky": {
