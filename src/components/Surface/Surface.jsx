@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
 				? theme.opacity[
 						Math.max(
 							Math.min(
-								props.depth || 1,
+								props.depth === undefined ? 1 : props.depth,
 								theme.opacity.length - 1
 							),
 							0
@@ -28,7 +28,10 @@ const useStyles = makeStyles((theme) => ({
 		boxShadow: (props) =>
 			theme.shadows[
 				Math.max(
-					Math.min(props.depth || 1, theme.shadows.length - 1),
+					Math.min(
+						props.depth === undefined ? 1 : props.depth,
+						theme.shadows.length - 1
+					),
 					0
 				)
 			],
@@ -38,7 +41,10 @@ const useStyles = makeStyles((theme) => ({
 			props.transparent &&
 			theme.blur[
 				Math.max(
-					Math.min((props.depth || 1) - 1, theme.blur.length - 1),
+					Math.min(
+						(props.depth === undefined ? 1 : props.depth) - 1,
+						theme.blur.length - 1
+					),
 					0
 				)
 			],
