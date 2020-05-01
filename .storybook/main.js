@@ -2,6 +2,7 @@ module.exports = {
 	stories: ['../src/**/*.stories.js'],
 	addons: [
 		'storybook-dark-mode/register',
+		'storybook-addon-theme-playground/dist/register',
 		'@storybook/preset-create-react-app',
 		'@storybook/addon-knobs/register',
 		'@storybook/addon-actions',

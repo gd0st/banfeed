@@ -8,8 +8,8 @@ const theme = {
 			disabled: 'rgba(255,255,255,0.3)',
 		},
 		background: {
-			surface: '#292d3e',
-			default: '#1b1e2b',
+			surface: '#FAFAFA',
+			default: '#ECEFF1',
 		},
 	},
 	blur: [

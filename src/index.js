@@ -6,11 +6,12 @@ import App from './App';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ThemeProvider } from '@material-ui/styles';
-import theme from './theme';
+// import lighttheme from './themes/light';
+import darktheme from './themes/dark';
 
 ReactDOM.render(
 	<React.StrictMode>
-		<ThemeProvider theme={theme}>
+		<ThemeProvider theme={darktheme}>
 			<App />
 		</ThemeProvider>
 	</React.StrictMode>,
