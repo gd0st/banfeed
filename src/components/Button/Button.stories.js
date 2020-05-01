@@ -20,7 +20,7 @@ export const WithIcon = () => (
 	<Button
 		disabled={boolean('Disabled', false)}
 		onClick={action('clicked')}
-		icon={<MdSave />}
+		icon={MdSave}
 	>
 		{text('Button Text', 'save button')}
 	</Button>
