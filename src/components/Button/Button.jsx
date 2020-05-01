@@ -4,6 +4,8 @@ import { makeStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
+		background: theme.palette.primary.main,
+		color: theme.palette.text.primary,
 		lineHeight: 1.75,
 		borderRadius: 4,
 		fontWeight: 500,
@@ -11,6 +13,9 @@ const useStyles = makeStyles((theme) => ({
 		fontSize: '0.875rem',
 		letterSpacing: '0.02857em',
 		padding: '6px 16px',
+		border: 'solid 1px',
+		borderColor: theme.palette.primary.main,
+		textTransform: 'uppercase',
 	},
 	label: {},
 	label_icon: {

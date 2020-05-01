@@ -4,14 +4,12 @@ import { makeStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
-		background: theme.palette.primary.main,
-		color: theme.palette.text.primary,
+		background: 'transparent',
 		display: 'block',
 		WebkitAppearance: 'none',
-		border: 'solid 1px',
-		borderColor: theme.palette.primary.main,
-		textTransform: 'uppercase',
-		padding: '8px 12px',
+		border: 'none',
+		padding: 0,
+		margin: 0,
 	},
 }));
 

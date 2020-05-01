@@ -1,1 +1,1 @@
-export { default as Surface } from './Surface';
+export { default } from './Surface';
