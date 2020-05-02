@@ -1,5 +1,5 @@
 ## BanFeed
 
-Start the app in development mode with `npm start`
+Start the app in development mode with `yarn start`
 
-Start the Storybook with `npm run storybook`
+Start the Storybook with `yarn storybook`
