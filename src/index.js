@@ -2,16 +2,16 @@ import './index.css';
 
 import * as serviceWorker from './serviceWorker';
 
+import themes, { defaultTheme } from './themes';
+
 import App from './App';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ThemeProvider } from '@material-ui/styles';
-// import lighttheme from './themes/light';
-import darktheme from './themes/dark';
+import { ThemeProvider } from '@material-ui/core/styles';
 
 ReactDOM.render(
 	<React.StrictMode>
-		<ThemeProvider theme={darktheme}>
+		<ThemeProvider theme={themes[defaultTheme]}>
 			<App />
 		</ThemeProvider>
 	</React.StrictMode>,

@@ -1,6 +1,6 @@
-import { PostCard } from '../components';
+// import { PostCard } from '../components';
 import React from 'react';
-import { makeStyles } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import useSWR from 'swr';
 
 const fetcher = (url) =>
@@ -29,9 +29,9 @@ const Home = (props) => {
 	if (!data) return <div>loading...</div>;
 	return (
 		<div className={classes.root}>
-			{data.data.children.map((e, i) => (
+			{/* {data.data.children.map((e, i) => (
 				<PostCard post={e.data} key={i}></PostCard>
-			))}
+			))} */}
 		</div>
 	);
 };

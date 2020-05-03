@@ -1,61 +1,21 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/styles';
+import Paper from '@material-ui/core/Paper';
+import { withStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles((theme) => ({
-	root: {
-		backgroundColor: (props) =>
-			theme.palette.background.surface +
-			(props.transparent
-				? theme.opacity[
-						Math.max(
-							Math.min(
-								props.depth === undefined ? 1 : props.depth,
-								theme.opacity.length - 1
-							),
-							0
-						)
-				  ]
-				: ''),
-		color: theme.palette.text.primary,
-		borderRadius: (props) => (props.square ? 0 : 6),
-		padding: '12px 16px',
-		borderColor: (props) =>
-			props.variant === 'outlined'
-				? theme.palette.primary.main
-				: 'transparent',
-		borderStyle: 'solid',
-		borderWidth: 1,
-		boxShadow: (props) =>
-			theme.shadows[
-				Math.max(
-					Math.min(
-						props.depth === undefined ? 1 : props.depth,
-						theme.shadows.length - 1
-					),
-					0
-				)
-			],
-		transition:
-			'background-color 0.1s, border-color 0.1s, box-shadow 0.1s, border-radius 0.1s, backdrop-filter 0.1s',
-		backdropFilter: (props) =>
-			props.transparent &&
-			theme.blur[
-				Math.max(
-					Math.min(
-						(props.depth === undefined ? 1 : props.depth) - 1,
-						theme.blur.length - 1
-					),
-					0
-				)
-			],
-	},
-}));
-
-const Surface = (props) => {
-	const { children } = props;
-	const classes = useStyles(props);
-
-	return <div className={classes.root}>{children}</div>;
+const toHex = (input) => {
+	input = Math.min(Math.max(input, 0), 255).toString(16);
+	return '0'.repeat(2 - input.length) + input;
 };
 
-export default Surface;
+export default withStyles((theme) => ({
+	root: {
+		backgroundColor: (props) =>
+			theme.palette.background.paper +
+			(props.transparent
+				? toHex(Math.max(255 - (props.elevation || 1) * 8), 192)
+				: ''),
+		backdropFilter: (props) =>
+			props.variant !== 'outlined' &&
+			props.transparent &&
+			`blur(${(props.elevation || 1) * 0.1}px)`,
+	},
+}))(Paper);

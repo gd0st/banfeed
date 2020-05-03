@@ -2,7 +2,7 @@ import { boolean, number, select } from '@storybook/addon-knobs';
 
 import React from 'react';
 import Surface from './Surface';
-import { makeStyles } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
 export default {
 	title: 'Surface',
@@ -26,10 +26,6 @@ export const Empty = () => {
 	return (
 		<div className={classes.root}>
 			<Surface
-				style={{
-					width: 100,
-					height: 100,
-				}}
 				variant={select(
 					'variant',
 					{
@@ -39,10 +35,10 @@ export const Empty = () => {
 					'default'
 				)}
 				transparent={boolean('transparent', false)}
-				depth={number('depth', 1, {
+				elevation={number('elevation', 1, {
 					range: true,
 					min: 0,
-					max: 7,
+					max: 24,
 					step: 1,
 				})}
 				square={boolean('square', false)}

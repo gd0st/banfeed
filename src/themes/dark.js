@@ -1,20 +1,19 @@
-import light from './light';
-
-const theme = {
-	...light,
+export default {
+	name: 'dark',
 	palette: {
+		type: 'dark',
 		primary: {
-			main: '#9147ff',
+			main: '#69F0AE',
 		},
-		text: {
-			primary: '#fff',
-			disabled: 'rgba(255,255,255,0.3)',
+		secondary: {
+			main: '#90CAF9',
+		},
+		error: {
+			main: '#ff0000',
 		},
 		background: {
-			surface: '#292d3e',
-			default: '#1b1e2b',
+			default: '#1B1E2B',
+			paper: '#292D3E',
 		},
 	},
 };
-
-export default theme;
