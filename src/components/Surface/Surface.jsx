@@ -11,11 +11,11 @@ export default withStyles((theme) => ({
 		backgroundColor: (props) =>
 			theme.palette.background.paper +
 			(props.transparent
-				? toHex(Math.max(255 - (props.elevation || 1) * 8), 192)
+				? toHex(Math.max(255 - (props.elevation || 1) * 4, 160))
 				: ''),
 		backdropFilter: (props) =>
 			props.variant !== 'outlined' &&
 			props.transparent &&
-			`blur(${(props.elevation || 1) * 0.1}px)`,
+			`blur(${props.elevation || 1}px)`,
 	},
 }))(Paper);

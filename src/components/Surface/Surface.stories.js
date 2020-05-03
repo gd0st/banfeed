@@ -1,7 +1,7 @@
-import { boolean, number, select } from '@storybook/addon-knobs';
+import { Surface, Text } from '../';
+import { boolean, number, select, text } from '@storybook/addon-knobs';
 
 import React from 'react';
-import Surface from './Surface';
 import { makeStyles } from '@material-ui/core/styles';
 
 export default {
@@ -16,7 +16,18 @@ const useStyles = makeStyles((theme) => ({
 		'& > *': {
 			width: 128,
 			height: 128,
+			display: 'flex',
+			flexDirection: 'column',
+			justifyContent: 'center',
 		},
+	},
+	video: {
+		zIndex: -4,
+		position: 'absolute',
+		top: 0,
+		left: 0,
+		height: '100%',
+		width: '100%',
 	},
 }));
 
@@ -25,6 +36,19 @@ export const Empty = () => {
 
 	return (
 		<div className={classes.root}>
+			{boolean('video') && (
+				<video
+					className={classes.video}
+					autoPlay
+					muted
+					controls
+					loop
+					src={text(
+						'video src url',
+						'https://thumbs.gfycat.com/VacantPoliteAmericanbulldog-mobile.mp4'
+					)}
+				></video>
+			)}
 			<Surface
 				variant={select(
 					'variant',
@@ -42,7 +66,11 @@ export const Empty = () => {
 					step: 1,
 				})}
 				square={boolean('square', false)}
-			></Surface>
+			>
+				<Text align='center' display='block'>
+					{text('text', 'text')}
+				</Text>
+			</Surface>
 		</div>
 	);
 };
