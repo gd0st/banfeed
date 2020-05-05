@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Home = (props) => {
 	const { data, error } = useSWR(
-		'https://www.reddit.com/r/all.json',
+		'/reddit/subreddits',
 		fetcher,
 		{ revalidateOnFocus: false }
 	);
