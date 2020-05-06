@@ -58,7 +58,7 @@ export const Empty = () => {
 					},
 					'default'
 				)}
-				transparent={boolean('transparent', false)}
+				transparent={boolean('transparent', false) ? true : undefined}
 				elevation={number('elevation', 1, {
 					range: true,
 					min: 0,
