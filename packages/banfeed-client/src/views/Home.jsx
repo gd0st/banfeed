@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const PostList = (props) => {
-	const { className, subreddit } = props;
+	const { className } = props;
 
 	const { data, error } = useSWR(
 		// `https://www.reddit.com/r/${subreddit}.json?raw_json=1`,

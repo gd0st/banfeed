@@ -267,7 +267,11 @@ const PostCard = (props) => {
 				</div>
 			) : (
 				<div className={classes.previewcontainer}>
-					<img className={classes.previewimg} src={url}></img>
+					<img
+						alt={post.title}
+						className={classes.previewimg}
+						src={url}
+					></img>
 				</div>
 			);
 		}
