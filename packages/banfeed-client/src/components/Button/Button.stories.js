@@ -6,7 +6,7 @@ import { action } from '@storybook/addon-actions';
 import { makeStyles } from '@material-ui/core/styles';
 
 export default {
-	title: 'Button',
+	title: 'Components/Inputs/Button',
 	component: Button,
 };
 

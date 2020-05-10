@@ -1,4 +1,5 @@
-import { PostCard } from '../components';
+import { PostCard, Text } from '../components';
+
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import useSWR from 'swr';
@@ -37,7 +38,12 @@ const PostList = (props) => {
 		}
 	);
 
-	if (error) return <div>failed to fetch from reddit</div>;
+	if (error)
+		return (
+			<Text color='error' align='center'>
+				failed to fetch from reddit
+			</Text>
+		);
 
 	// TODO animated the blank cards while loading
 

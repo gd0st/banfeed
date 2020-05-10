@@ -7,7 +7,7 @@ import { text } from '@storybook/addon-knobs';
 import useSWR from 'swr';
 
 export default {
-	title: 'Post Card',
+	title: 'Components/Surfaces/Post Card',
 	component: PostCard,
 	parameters: {
 		knobs: {

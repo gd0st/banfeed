@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/styles';
 import { select } from '@storybook/addon-knobs';
 
 export default {
-	title: 'Text',
+	title: 'Components/Data Display/Text',
 	component: Text,
 };
 

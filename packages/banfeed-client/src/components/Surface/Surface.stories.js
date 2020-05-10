@@ -5,7 +5,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
 export default {
-	title: 'Surface',
+	title: 'Components/Surfaces/Surface',
 	component: Surface,
 };
 
