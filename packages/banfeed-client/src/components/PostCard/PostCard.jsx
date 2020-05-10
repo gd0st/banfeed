@@ -7,6 +7,7 @@ import {
 
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
+import ButtonBase from '@material-ui/core/ButtonBase';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -68,7 +69,8 @@ const useStyles = makeStyles((theme) => ({
 	},
 	body: {
 		flexGrow: 1,
-		cursor: 'pointer',
+		display: 'block',
+		textAlign: 'left',
 	},
 	previewcontainer: {
 		display: 'flex',
@@ -349,7 +351,7 @@ const PostCard = (props) => {
 								)}
 						</Text>
 					</div>
-					<div className={classes.body} onClick={onClick}>
+					<ButtonBase className={classes.body} onClick={onClick}>
 						<Text
 							className={classes.title}
 							variant='h5'
@@ -358,7 +360,7 @@ const PostCard = (props) => {
 							{post && post.title}
 						</Text>
 						{body}
-					</div>
+					</ButtonBase>
 				</CardContent>
 				{hasThumbnail && (
 					<CardActionArea
