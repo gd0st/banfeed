@@ -13,6 +13,7 @@ export default {
 		knobs: {
 			timestamps: true,
 		},
+		centered: { disable: true },
 	},
 };
 
@@ -29,8 +30,8 @@ export const Reddit = () => {
 	const subreddit = text('subreddit', 'all');
 
 	const { data, error } = useSWR(
-		// `https://www.reddit.com/r/${subreddit}.json?raw_json=1`,
-		'/reddit/subreddits',
+		`https://www.reddit.com/r/${subreddit}.json?raw_json=1`,
+		// '/reddit/subreddits',
 		fetcher,
 		{ revalidateOnFocus: false }
 	);
