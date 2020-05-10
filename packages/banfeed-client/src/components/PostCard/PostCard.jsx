@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	contentwrapper: {
 		flexGrow: 1,
-		display: 'flex',
+		display: (props) => (props.hasThumbnail ? 'flex' : 'block'),
 	},
 	content: {
 		flexGrow: 1,
@@ -82,6 +82,7 @@ const useStyles = makeStyles((theme) => ({
 	previewimg: {
 		objectFit: 'contain',
 		maxHeight: 512,
+		maxWidth: '100%',
 		margin: '0 auto',
 	},
 	previewvideo: {},
@@ -202,7 +203,6 @@ const PostCardSubredditIcon = (props) => {
 
 const PostCard = (props) => {
 	const { className, post, onClick, onClickComments } = props;
-	const classes = useStyles();
 
 	// TODO all this preview shit should be done on the backend
 
@@ -216,6 +216,17 @@ const PostCard = (props) => {
 		post.selftext_html &&
 		post.selftext_html.length > 0
 	);
+
+	const hasThumbnail =
+		post &&
+		!hasPreview &&
+		!hasEmbed &&
+		post.thumbnail &&
+		post.thumbnail !== 'default';
+
+	const classes = useStyles({
+		hasThumbnail,
+	});
 
 	let body = '';
 
@@ -349,22 +360,18 @@ const PostCard = (props) => {
 						{body}
 					</div>
 				</CardContent>
-				{post &&
-					!hasPreview &&
-					!hasEmbed &&
-					post.thumbnail &&
-					post.thumbnail !== 'default' && (
-						<CardActionArea
-							className={classes.thumbnailarea}
-							onClick={onClick}
-						>
-							<CardMedia
-								className={classes.thumbnail}
-								alt={post.title}
-								image={post.thumbnail}
-							></CardMedia>
-						</CardActionArea>
-					)}
+				{hasThumbnail && (
+					<CardActionArea
+						className={classes.thumbnailarea}
+						onClick={onClick}
+					>
+						<CardMedia
+							className={classes.thumbnail}
+							alt={post.title}
+							image={post.thumbnail}
+						></CardMedia>
+					</CardActionArea>
+				)}
 			</div>
 			<div className={classes.bottom}>
 				<div className={classes.votecontainer}>
